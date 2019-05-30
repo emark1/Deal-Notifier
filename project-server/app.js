@@ -115,28 +115,7 @@ function retrieveDatabase(){
 
 retrieveDatabase()
 
-//****************RETRIEVE POSTS FROM REDDIT API****************
-function getBAPCSposts(){
-    let url = 'https://www.reddit.com/r/buildapcsales/new.json?limit=25'
-    fetch(url)
-    .then(response => response.json()).then(json => {
-      // console.log(json)
-      return json
-    }).then((json) => {
-        let postItems = json.data.children.map((post) => {
-
-            return (
-                post.data.title
-            )
-        })
-        return postItems
-    }).then((postItems) => {
-        // console.log(postItems)
-    }) 
-}
-
-//****************CHECK DATA AND SEND TEXT****************
-
+//****************CHECK DATA****************
 function checkPosts() {
   let processedUsers = userPhoneNumbers.map((user) => {
     // console.log('keys', Object.keys(user.dataValues))
@@ -150,22 +129,54 @@ function checkPosts() {
       })
     }
   }) 
-  console.log(processedUsers)
+  getBAPCSposts(processedUsers)
+  // console.log(processedUsers)
+}
+
+//****************COMPARE POSTS AND SEND TEXT****************
+function comparePosts() {
+
+}
+
+//****************RETRIEVE POSTS FROM REDDIT API****************
+function getBAPCSposts(processedUsers){
+    let url = 'https://www.reddit.com/r/buildapcsales/new.json?limit=25'
+    fetch(url)
+    .then(response => response.json()).then(json => {
+      // console.log(json)
+      return json
+    }).then((json) => {
+        let postItems = json.data.children.map((post) => {
+            return (
+                post.data.title
+            )
+        })
+        return postItems
+    // }).then((postItems) => {
+    //     console.log(postItems)
+    }).then((postItems) => {
+      postItems.forEach(element => {
+        console.log(processedUsers)
+
+        // if (processedUsers.searchParams.includes(element)) {
+        //   sendText()
+        // }
+      });
+    })
+}
+
+//****************SEND TEXT WITH TWILIO****************
+function sendText() {
+  client.messages.create({
+     body: 'Hey, new deal here!',
+     from: '+15072487456',
+     to: '+15072763034'
+  })
+  .then(message => console.log(message.sid));
 }
 
 
-
-//Sends a text message with Twilio:
-// client.messages.create({
-//      body: 'Test text: HELLO WORLD',
-//      from: '+15072487456',
-//      to: '+15072763034'
-//     //  to: '+16514926445'
-//    })
-//   .then(message => console.log(message.sid));
-
 // setInterval(function(){ getBAPCSposts() },5000);
-getBAPCSposts()
 
 //****************DELETE NUMBER****************
 app.post('/delete-number',(req,res) => {

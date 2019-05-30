@@ -1,6 +1,9 @@
+// import Toggle from 'react-toggle'
 import React, { Component } from 'react';
 import ToggleButton from 'react-toggle-button'
 var Columns = require('react-columns');
+
+
 
 export class SubmitInfo extends Component {
 
@@ -8,7 +11,7 @@ export class SubmitInfo extends Component {
         super()
         this.state = {
         phoneNumber: '',
-        Case: true,
+        Case: false,
         Cooler: false,
         HDD: false,
         Headphones: false,
@@ -87,93 +90,371 @@ export class SubmitInfo extends Component {
                 <button onClick={this.deleteClick}>Delete Number</button>
                 
             </div>
-            {/* <div>
-            <ToggleButton
-                value={ self.state.value || false }
+            <div>
+            {/* <ToggleButton
+                value={ this.state.SSD || false }
                 onToggle={(value) => {
-                    self.setState({
-                    value: !value,
+                    this.setState({
+                    SSD: !value,
                     })
-                }} />
+                }} /> */}
+            
+            <ToggleButton
+            inactiveLabel={"X"}
+            activeLabel={"Added"}
+            value={this.state.SSD}
+            onToggle={(value) => {
+                this.setState({
+                SSD: !value,
+                })
+            }} />
+            SSD
+                {/* <Toggle
+                id='cheese-status'
+                defaultChecked={this.state.cheeseIsReady}
+                onChange={this.handleCheeseChange} />
+                <label htmlFor='cheese-status'>Adjacent label tag</label> */}
+            </div>
+            <div>
+            <ToggleButton
+            inactiveLabel={"X"}
+            activeLabel={"Added"}
+            value={this.state.Case}
+            onToggle={(value) => {
+                this.setState({
+                Case: !value,
+                })
+            }} />
+            </div>
+            <div>
+            <ToggleButton
+            inactiveLabel={"X"}
+            activeLabel={"Added"}
+            value={this.state.HDD}
+            onToggle={(value) => {
+                this.setState({
+                HDD: !value,
+                })
+            }} />
+            </div>
+            <div>
+            <ToggleButton
+            inactiveLabel={"X"}
+            activeLabel={"Added"}
+            value={this.state.Headphones}
+            onToggle={(value) => {
+                this.setState({
+                Headphones: !value,
+                })
+            }} />
+            </div>
+            <div>
+            <ToggleButton
+            inactiveLabel={"X"}
+            activeLabel={"Added"}
+            value={this.state.Fan}
+            onToggle={(value) => {
+                this.setState({
+                Fan: !value,
+                })
+            }} />
+            </div>
+            <div>
+            <ToggleButton
+            inactiveLabel={"X"}
+            activeLabel={"Added"}
+            value={this.state.PSU}
+            onToggle={(value) => {
+                this.setState({
+                PSU: !value,
+                })
+            }} />
+            </div>
+            <div>
+            <ToggleButton
+            inactiveLabel={"X"}
+            activeLabel={"Added"}
+            value={this.state.Prebuilt}
+            onToggle={(value) => {
+                this.setState({
+                Prebuilt: !value,
+                })
+            }} />
+            </div>
+            <div>
+            <ToggleButton
+            inactiveLabel={"X"}
+            activeLabel={"Added"}
+            value={this.state.cpuCooler}
+            onToggle={(value) => {
+                this.setState({
+                cpuCooler: !value,
+                })
+            }} />
+            </div>
+            <div>
+            <ToggleButton
+            inactiveLabel={"X"}
+            activeLabel={"Added"}
+            value={this.state.Webcam}
+            onToggle={(value) => {
+                this.setState({
+                Webcam: !value,
+                })
+            }} />
+            </div>
+            <div>
+            <ToggleButton
+            inactiveLabel={"X"}
+            activeLabel={"Added"}
+            value={this.state.Controller}
+            onToggle={(value) => {
+                this.setState({
+                Controller: !value,
+                })
+            }} />
+            </div>
+            <div>
+            <ToggleButton
+            inactiveLabel={"X"}
+            activeLabel={"Added"}
+            value={this.state.Laptop}
+            onToggle={(value) => {
+                this.setState({
+                Laptop: !value,
+                })
+            }} />
+            </div>
+            <div>
+            <ToggleButton
+            inactiveLabel={"X"}
+            activeLabel={"Added"}
+            value={this.state.Monitor}
+            onToggle={(value) => {
+                this.setState({
+                Monitor: !value,
+                })
+            }} />
+            </div>
+            <div>
+            <ToggleButton
+            inactiveLabel={"X"}
+            activeLabel={"Added"}
+            value={this.state.VR}
+            onToggle={(value) => {
+                this.setState({
+                VR: !value,
+                })
+            }} />
+            </div>
+            <div>
+            <ToggleButton
+            inactiveLabel={"X"}
+            activeLabel={"Added"}
+            value={this.state.RAM}
+            onToggle={(value) => {
+                this.setState({
+                RAM: !value,
+                })
+            }} />
+            </div>
+            <div>
+            <ToggleButton
+            inactiveLabel={"X"}
+            activeLabel={"Added"}
+            value={this.state.Headset}
+            onToggle={(value) => {
+                this.setState({
+                Headset: !value,
+                })
+            }} />
+            </div>
+            <div>
+            <ToggleButton
+            inactiveLabel={"X"}
+            activeLabel={"Added"}
+            value={this.state.OpticalDrive}
+            onToggle={(value) => {
+                this.setState({
+                OpticalDrive: !value,
+                })
+            }} />
+            </div>
+            <div>
+            <ToggleButton
+            inactiveLabel={"X"}
+            activeLabel={"Added"}
+            value={this.state.CPU}
+            onToggle={(value) => {
+                this.setState({
+                CPU: !value,
+                })
+            }} />
+            </div>
+            <div>
+            <ToggleButton
+            inactiveLabel={"X"}
+            activeLabel={"Added"}
+            value={this.state.OS}
+            onToggle={(value) => {
+                this.setState({
+                OS: !value,
+                })
+            }} />
+            </div>
+            <div>
+            <ToggleButton
+            inactiveLabel={"X"}
+            activeLabel={"Added"}
+            value={this.state.Motherboard}
+            onToggle={(value) => {
+                this.setState({
+                Motherboard: !value,
+                })
+            }} />
+            </div>
+            <div>
+            <ToggleButton
+            inactiveLabel={"X"}
+            activeLabel={"Added"}
+            value={this.state.Speakers}
+            onToggle={(value) => {
+                this.setState({
+                Speakers: !value,
+                })
+            }} />
+            </div>
+            <div>
+            <ToggleButton
+            inactiveLabel={"X"}
+            activeLabel={"Added"}
+            value={this.state.Keyboard}
+            onToggle={(value) => {
+                this.setState({
+                Keyboard: !value,
+                })
+            }} />
+            </div>
+            <div>
+            <ToggleButton
+            inactiveLabel={"X"}
+            activeLabel={"Added"}
+            value={this.state.Networking}
+            onToggle={(value) => {
+                this.setState({
+                Networking: !value,
+                })
+            }} />
+            </div>
+            <div>
+            <ToggleButton
+            inactiveLabel={"X"}
+            activeLabel={"Added"}
+            value={this.state.Furniture}
+            onToggle={(value) => {
+                this.setState({
+                Furniture: !value,
+                })
+            }} />
+            </div>
+            <div>
+            <ToggleButton
+            inactiveLabel={"X"}
+            activeLabel={"Added"}
+            value={this.state.GPU}
+            onToggle={(value) => {
+                this.setState({
+                GPU: !value,
+                })
+            }} />
+            </div>
+            <div>
+            <ToggleButton
+            inactiveLabel={"X"}
+            activeLabel={"Added"}
+            value={this.state.Mouse}
+            onToggle={(value) => {
+                this.setState({
+                Mouse: !value,
+                })
+            }} />
+            </div>
+            <div>
+            <ToggleButton
+            inactiveLabel={"X"}
+            activeLabel={"Added"}
+            value={this.state.Processor}
+            onToggle={(value) => {
+                this.setState({
+                Processor: !value,
+                })
+            }} />
+            </div>
+            <div>
+            <ToggleButton
+            inactiveLabel={"X"}
+            activeLabel={"Added"}
+            value={this.state.HomeTheaterPC}
+            onToggle={(value) => {
+                this.setState({
+                HomeTheaterPC: !value,
+                })
+            }} />
+            </div>
+            <div>
+            <ToggleButton
+            inactiveLabel={"X"}
+            activeLabel={"Added"}
+            value={this.state.flashDrive}
+            onToggle={(value) => {
+                this.setState({
+                flashDrive: !value,
+                })
+            }} />
+            </div>
+            <div>
+            <ToggleButton
+            inactiveLabel={"X"}
+            activeLabel={"Added"}
+            value={this.state.Router}
+            onToggle={(value) => {
+                this.setState({
+                Router: !value,
+                })
+            }} />
+            </div>
+            <div>
+            <ToggleButton
+            inactiveLabel={"X"}
+            activeLabel={"Added"}
+            value={this.state.Mic}
+            onToggle={(value) => {
+                this.setState({
+                Mic: !value,
+                })
+            }} />
+            </div>
+            <div>
+            <ToggleButton
+            inactiveLabel={"X"}
+            activeLabel={"Added"}
+            value={this.state.Cooler}
+            onToggle={(value) => {
+                this.setState({
+                Cooler: !value,
+                })
+            }} />
+            </div>
+
+            {/* <div>
+            <label>
+                <Toggle
+                    defaultChecked={this.state.baconIsReady}
+                    onChange={this.handleBaconChange} />
+                <span>Wrapper label tag</span>
+                </label>
             </div> */}
 
-            <div>
-                <button onClick={this.handleProductClick} name="Case">Case</button>
-            </div>
-            <div>
-            <button onClick={this.handleProductClick} name="Cooler">Cooler</button>
-            </div>
-            <div>
-            <button onClick={this.handleProductClick} name="HDD">HDD</button>
-            </div>
-            <div>
-            <button onClick={this.handleProductClick} name="Headphones">Headphones</button>
-            </div>
-            <div>
-            <button>SSD</button>
-            </div>
-            <div>
-            <button>Fan</button>
-            </div>
-            <div>
-            <button>PSU</button>
-            </div>
-            <div>
-            <button>Prebuilt</button>
-            </div>
-            <div>
-            <button>CPU Cooler</button>
-            </div>
-            <div>
-            <button>Webcam</button>
-            </div>
-            <div>
-            <button>Speakers</button>
-            </div>
-            <div>
-            <button>Controllers</button>
-            </div>
-            <div>
-            <button>Laptop</button>
-            </div>
-            <div>
-            <button>Monitor</button>
-            </div>
-            <div>
-            <button>VR</button>
-            </div>
-            <div>
-            <button>RAM</button>
-            </div>
-            <div>
-            <button>Headset</button>
-            </div>
-            <div>
-            <button>Optical Drives</button>
-            </div>
-            <div>
-            <button>CPU</button>
-            </div>
-            <div>
-            <button>OS</button>
-            </div>
-            <div>
-            <button>Motherboard</button>
-            </div>
-            <div>
-            <button>GPU</button>
-            </div>
-            <div>
-            <button>Mouse</button>
-            </div>
-            <div>
-            <button>Keyboard</button>
-            </div>
-            <div>
-            </div>
-            <div>
-                <button></button>
-            </div>
             </div>
         )
     }
