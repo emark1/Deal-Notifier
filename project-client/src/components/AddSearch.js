@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export class Template extends Component {
+export class AddTerm extends Component {
 
     constructor() {
         super()
@@ -26,15 +26,13 @@ export class Template extends Component {
             },
             body: JSON.stringify(item)
         })
-        
         }
 
     render() {
         return (
             <div>
-                <h1>Placholder</h1>
                 <input type="text" onChange={this.handleTextBoxChange} placeholder="Enter Item" name="itemname" />
-                <button onClick={() => this.addClick(card)}>Save to Collection</button>
+                <button onClick={this.addClick}>Save Term</button>
             </div>
         )
     }

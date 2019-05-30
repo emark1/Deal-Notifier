@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Template } from './components/Template'
+import { SubmitInfo } from './components/SubmitInfo'
 
 class App extends Component {
 
@@ -22,6 +23,7 @@ class App extends Component {
     return (
       <div className="App">
         <Template></Template>
+        <SubmitInfo />
       </div>
     );
   }

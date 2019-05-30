@@ -4,7 +4,7 @@ export class Template extends Component {
     render() {
         return (
             <div>
-                <h1>Placholder</h1>
+                <h1>Reddit Deal Notifier</h1>
             </div>
         )
     }
