@@ -2,6 +2,8 @@
 
 This web application accepts a phone number from the user along with a series of preferences for items the user is interested in purchasing. The phone number, along with the item preferences, are stored in a Postgres database. The server will ping the subreddit Build a PC Sales periodically. If a new thread is posted that matches the user's preferences, a text message will be sent to the user with information and a link to the deal. 
 
+<img src="https://i.imgur.com/2VopPwz.png">
+
 After entering your phone number and preferences, you can check for deals immediately by pressing the "Test" button. You can also delete your information from the database by entering your phone number and pressing the delete button. 
 
 The project is built using ReactJS, Sequelize, Express, and Javascript. 
